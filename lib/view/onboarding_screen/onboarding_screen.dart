@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dice/utlits/color_const.dart';
 import 'package:flutter_dice/utlits/image_const.dart';
+import 'package:flutter_dice/view/login_screen/login_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -30,16 +31,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       fontSize: 18,
                 color: ColorConst.GREYSHADE2,
                 fontWeight: FontWeight.w600
-          
                     ),)
             ],
           ),
         ),
       
       actions: [
-        TextButton(onPressed: () {}, 
-        child: Text("skip"),
-        style: ButtonStyle(),)
+        InkWell( 
+          onTap: () {
+          },
+           child: Padding(
+             padding: const EdgeInsets.only(right: 17),
+             child: Text("skip",
+             style: TextStyle(
+                 fontWeight: FontWeight.w600,
+                 fontSize: 18,
+                    color: ColorConst.BLACK,
+                      ),
+             ),
+           ),),
       ],),
       body: Column(
         children: [
@@ -65,8 +75,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               fontWeight: FontWeight.w600),),
             )
           ],),),
-          BottomAppBar(child: Text("Next",
-          ),)
+          SizedBox(
+            height: 160,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));},
+                child: Text("Next",style: TextStyle(
+                  color:ColorConst.PRIMARYCLR,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600
+                ),),
+              ),
+            ],
+          )
         ],
       ),
     );
