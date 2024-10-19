@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dice/utlits/color_const.dart';
+import 'package:flutter_dice/view/global_widgets/custom_input_field.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,9 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.only(top: 63,left: 32),
             child: Container(child:
              Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.start,
+              // /n
                children: [
-                 Text("Welcome",style:TextStyle(
+                 Text("Welcome",style:GoogleFonts.montserrat(
                   fontWeight: FontWeight.bold,
                   fontSize: 36,
                   color: ColorConst.BLACK) ,),
@@ -32,21 +35,19 @@ class _LoginScreenState extends State<LoginScreen> {
                ],
              )),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 29,left: 29),
-            child: TextField(decoration: InputDecoration(prefixIcon: Icon(Icons.person),filled:true, fillColor: ColorConst.GREYSHADE1,hintText: 'USER NAME',           
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))),),
+          SizedBox(height: 31,),
+          CustomInputField(hintText: "Username or password",
+          prefixIcon: Icons.person),
+           SizedBox(height: 31,),
+          CustomInputField(
+            hintText: "Password",
+            prefixIcon: Icons.lock,
           ),
-          SizedBox(height: 31,),
-          TextField(decoration: InputDecoration(prefixIcon: Icon(Icons.lock),suffixIcon: Icon(Icons.remove_red_eye),filled:true, fillColor: ColorConst.GREYSHADE1,hintText: 'ENTER YOUR PASSWORD',           
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))),),
-          SizedBox(height: 31,),
-          TextField(decoration: InputDecoration(prefixIcon: Icon(Icons.lock),suffixIcon: Icon(Icons.remove_red_eye),filled:true, fillColor: ColorConst.GREYSHADE1,hintText: 'CONFIRM PASSWORD',           
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))),)
-
         ],
       ),
     );
   }
 }
+
+
 //text field
