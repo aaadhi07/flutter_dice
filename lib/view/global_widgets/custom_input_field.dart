@@ -17,7 +17,8 @@ class CustomInputField extends StatelessWidget {
       child: TextField(decoration:
        InputDecoration(
         prefixIcon: Icon(prefixIcon),
-      filled:true, fillColor: ColorConst.GREYSHADE3,
+      filled:true, 
+      fillColor: ColorConst.GREYSHADE3,
       hintText:hintText,           
       border: OutlineInputBorder(borderSide: BorderSide(color: ColorConst.GREYSHADE1),
         borderRadius: BorderRadius.circular(10))),),
